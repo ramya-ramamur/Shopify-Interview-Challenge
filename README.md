@@ -15,7 +15,7 @@ What metric would you report for this dataset?
 What is its value?
 
 
-### Question 2: For this question you’ll need to use SQL. Follow this link to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
+### Question 2: For this question you’ll need to use SQL. Follow this [link](https://www.w3schools.com/SQL/TRYSQL.ASP?FILENAME=TRYSQL_SELECT_ALL) to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
 
 #### [SQL Question 1](https://github.com/ramya-ramamur/Shopify-Interview-Challenge/blob/main/SQL/SQL_Question_1.png)
 * **How many orders were shipped by Speedy Express in total?**
@@ -28,6 +28,6 @@ What is its value?
 #### [SQL QUESTION 3](https://github.com/ramya-ramamur/Shopify-Interview-Challenge/blob/main/SQL/SQL_QUESTION_3.png)
 * **What product was ordered the most by customers in Germany?**
 
-<img width="532" alt="Screen Shot 2022-05-19 at 10 52 43 AM" src="https://user-images.githubusercontent.com/75961057/169365617-111ece17-39c9-4401-8d9c-432669db5053.png">
+<img width="592" alt="Screen Shot 2022-05-19 at 11 45 16 AM" src="https://user-images.githubusercontent.com/75961057/169376956-944889f0-1b87-4df4-8788-c7a325421edb.png">
 
-<img width="1176" alt="SQL_QUESTION_3" src="https://user-images.githubusercontent.com/75961057/169365477-248d4c16-7c1a-4c44-b284-8678d961789f.png">
+<img width="1178" alt="SQL_Question_3" src="https://user-images.githubusercontent.com/75961057/169377008-c7213d41-98fc-4c7c-a470-1eecbbdfd0c3.png">
