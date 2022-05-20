@@ -14,20 +14,37 @@ Think about what could be going wrong with our calculation. Think about a better
 What metric would you report for this dataset?
 What is its value?
 
-#### **Solution:**
+#### **Solution:** Please see 
 
 Data Exploration and Transformation
 1. Data was pulled from an excel file and transferred to a pandas dataframe called "sneaker_shop" The dataset was examined for null values, dulicate data and outliers. 
 <img width="670" alt="Screen Shot 2022-05-20 at 4 34 06 PM" src="https://user-images.githubusercontent.com/75961057/169624670-c119c1d4-1c3b-453b-9b36-f11adbd6a67e.png">
 
-3. Unneeded columns "order_id", "user_id", "payment_method", "created_at" was dropped to create a new dataframe that had "shop_id", "order_amount", and "total_items"
-4. A metric of Average Order Value was added as a column to the dataframe after  
+2. Unneeded columns "order_id", "user_id", "payment_method", "created_at" was dropped to create a new dataframe that had "shop_id", "order_amount", and "total_items"
+<img width="284" alt="Screen Shot 2022-05-20 at 4 37 05 PM" src="https://user-images.githubusercontent.com/75961057/169624823-3adcab00-1ef0-4f50-bb65-8794eb7e635c.png">
+
+3. A metric of Average Order Value for each order was added as a column to the dataframe. 
+<img width="719" alt="Screen Shot 2022-05-20 at 4 38 14 PM" src="https://user-images.githubusercontent.com/75961057/169624889-71ff43a1-db8e-4d94-8edc-b4f328b494fd.png">
 
 **Observations:**
 1. The original calculation for AOV (given in problem statement) seems to have just taken the mean (3145.13) of the order_amount without taking into account total_items ordered. The standard deviation and max value is also very high indicating there are some outliers. See summary statistics below. 
 <img width="646" alt="Screen Shot 2022-05-20 at 4 17 39 PM" src="https://user-images.githubusercontent.com/75961057/169623722-8316abf2-e7cb-4d55-bd76-d0659694b7d0.png">
 2. Shop no 42 was the only shop with orders  more than 2000. Orders at the other shops are usually between 1-10 in the 30 day window. However since the  Average value (AOV) per order for shop 42 is 352 which lies in the "a relatively affordable item" spectrum.  There does not seem to be any anomaly.
+<img width="1109" alt="Screen Shot 2022-05-20 at 4 40 25 PM" src="https://user-images.githubusercontent.com/75961057/169625021-4f5cfc2b-f0b0-4bf5-bf76-62bd16125355.png">
+
 3. There is one outlier - shop_id 78 with 46 orders with AOV of 25725 that is substantially higher than the other data points.
+<img width="681" alt="Screen Shot 2022-05-20 at 4 41 18 PM" src="https://user-images.githubusercontent.com/75961057/169625076-41f79341-aac6-4f1f-aaf1-584b10545b63.png">
+
+4. Mean and Median Calulation: Compared two scenarios of calculation of mean and median AOV before and after removing the outliers with AOV of 25725.
+    * Mean and Median before removing outlier. 
+    We can that mean(387.74) and median (153.0) are far apart. More specifically Mean is more than $200 over the median and closer to the 75th percentile (390.0) from our summary statistics calculation.
+    
+<img width="480" alt="Screen Shot 2022-05-20 at 4 44 21 PM" src="https://user-images.githubusercontent.com/75961057/169625216-e3a4a39e-6e0c-479f-b06c-ee9b178e0116.png">
+
+    * Mean and Median after removing outliers.
+    The median remains the same at 153.0 and mean (152.48) is now closer to the median meaning the data set now has a symmetrical distribution.
+    
+    <img width="665" alt="Screen Shot 2022-05-20 at 4 47 52 PM" src="https://user-images.githubusercontent.com/75961057/169625378-8793939e-d30f-491c-b3b2-88793e8f9019.png">
 
 ### Question 2: For this question you’ll need to use SQL. Follow this [link](https://www.w3schools.com/SQL/TRYSQL.ASP?FILENAME=TRYSQL_SELECT_ALL) to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
 
