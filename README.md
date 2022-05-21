@@ -6,7 +6,7 @@ This is an exercise for the Shopify Interview Challenge. Details as follows.
 Please complete the following questions, and provide your thought process/work. You can attach your work in a text file, link, etc. on the application page. Please ensure answers are easily visible for reviewers!
 
 
-### Question 1: Given some sample data, write a program to answer the following: [click here](https://github.com/ramya-ramamur/Shopify-Interview-Challenge/blob/main/Shopify_Challenge_Question_1/2019%20Winter%20Data%20Science%20Intern%20Challenge%20Data%20Set.xlsx) to access the required data set
+## Question 1: Given some sample data, write a program to answer the following: [click here](https://github.com/ramya-ramamur/Shopify-Interview-Challenge/blob/main/Shopify_Challenge_Question_1/2019%20Winter%20Data%20Science%20Intern%20Challenge%20Data%20Set.xlsx) to access the required data set
 
 On Shopify, we have exactly 100 sneaker shops, and each of these shops sells only one model of shoe. We want to do some analysis of the average order value (AOV). When we look at orders data over a 30 day window, we naively calculate an AOV of $3145.13. Given that we know these shops are selling sneakers, a relatively affordable item, something seems wrong with our analysis. 
 
@@ -14,7 +14,8 @@ Think about what could be going wrong with our calculation. Think about a better
 What metric would you report for this dataset?
 What is its value?
 
-#### **Solution:** Please see 
+### **Solution:** 
+Please see [Shopify_Challenge_Question_1.ipynb](https://github.com/ramya-ramamur/Shopify-Interview-Challenge/blob/main/Shopify_Challenge_Question_1/Shopify_Challenge_Question_1.ipynb) for full solution. 
 
 Data Exploration and Transformation
 1. Data was pulled from an excel file and transferred to a pandas dataframe called "sneaker_shop" The dataset was examined for null values, dulicate data and outliers. 
@@ -35,18 +36,29 @@ Data Exploration and Transformation
 3. There is one outlier - shop_id 78 with 46 orders with AOV of 25725 that is substantially higher than the other data points.
 <img width="681" alt="Screen Shot 2022-05-20 at 4 41 18 PM" src="https://user-images.githubusercontent.com/75961057/169625076-41f79341-aac6-4f1f-aaf1-584b10545b63.png">
 
-4. Mean and Median Calulation: Compared two scenarios of calculation of mean and median AOV before and after removing the outliers with AOV of 25725.
-    * Mean and Median before removing outlier. 
-    We can that mean(387.74) and median (153.0) are far apart. More specifically Mean is more than $200 over the median and closer to the 75th percentile (390.0) from our summary statistics calculation.
+4. **Mean and Median Calulation:** Compared two scenarios of calculation of mean and median AOV before and after removing the outliers with AOV of 25725.
+
+* Mean and Median before removing outlier. 
+
+We can that mean(387.74) and median (153.0) are far apart. More specifically Mean is more than $200 over the median and closer to the 75th percentile (390.0) from our summary statistics calculation.
     
 <img width="480" alt="Screen Shot 2022-05-20 at 4 44 21 PM" src="https://user-images.githubusercontent.com/75961057/169625216-e3a4a39e-6e0c-479f-b06c-ee9b178e0116.png">
 
-    * Mean and Median after removing outliers.
-    The median remains the same at 153.0 and mean (152.48) is now closer to the median meaning the data set now has a symmetrical distribution.
-    
-    <img width="665" alt="Screen Shot 2022-05-20 at 4 47 52 PM" src="https://user-images.githubusercontent.com/75961057/169625378-8793939e-d30f-491c-b3b2-88793e8f9019.png">
+* Mean and Median after removing outliers.
 
-### Question 2: For this question you’ll need to use SQL. Follow this [link](https://www.w3schools.com/SQL/TRYSQL.ASP?FILENAME=TRYSQL_SELECT_ALL) to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
+The median remains the same at 153.0 and mean (152.48) is now closer to the median meaning the data set now has a symmetrical distribution.
+    
+ <img width="665" alt="Screen Shot 2022-05-20 at 4 47 52 PM" src="https://user-images.githubusercontent.com/75961057/169625378-8793939e-d30f-491c-b3b2-88793e8f9019.png">
+
+**Conclusion:**
+
+In this dataset, we observed that the mean and median far apart when outliers are not removed. More specifically Mean is more than $200 over the median. From furthur observation of the dataset, that shop_id 78 has several orders with an AOV of \$25725 which does not agree with the characterization of affordable shoes in the description. We note that the larger mean is a direct result of this outlier.
+
+To prove this hypothesis, we prune the outliers from the dataset and recompute the mean. Such a recomputed mean is closer to the median, which proves the hypothesis.
+
+For the highlighted reason Median value of 153.0 is a better measure of AOV than mean for this dataset.
+
+## Question 2: For this question you’ll need to use SQL. Follow this [link](https://www.w3schools.com/SQL/TRYSQL.ASP?FILENAME=TRYSQL_SELECT_ALL) to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
 
 #### [SQL Question 1](https://github.com/ramya-ramamur/Shopify-Interview-Challenge/blob/main/SQL/SQL_Question_1.png)
 * **How many orders were shipped by Speedy Express in total?**
